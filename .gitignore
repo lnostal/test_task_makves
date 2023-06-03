@@ -18,6 +18,9 @@
 # vendor/
 /.idea
 /.git
+/bin
+*.DS_Store
 
 # Go workspace file
 go.work
+go.sum
