@@ -2,28 +2,27 @@ package db
 
 import (
 	"github.com/gocarina/gocsv"
-	"log"
 	"os"
-	"test_task_makves/src/dto"
+	"test_task_makves/src/model"
 )
 
 // todo: заменить путь на относительный, докрутить кроссплатформу
 
-func ReadLocalDB() []*model.DB_entity {
+func ReadLocalDB() ([]model.DB_entity, error) {
 
-	entityArray := []*model.DB_entity{}
+	entityArray := []model.DB_entity{}
 
-	file, err := os.Open("/Users/nosta/Documents/projects/test_task_makves/src/db/table_test.csv")
+	file, err := os.Open("/Users/nosta/Documents/projects/test_task_makves/src/db/table.csv")
 	if err != nil {
-		log.Fatal(err)
+		return nil, err
 	}
 
 	defer file.Close()
 
 	err = gocsv.Unmarshal(file, &entityArray)
 	if err != nil {
-		return nil
+		return nil, err
 	}
 
-	return entityArray
+	return entityArray, nil
 }

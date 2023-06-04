@@ -1,7 +1,17 @@
 package main
 
-import "test_task_makves/src/db"
+import (
+	"github.com/gin-gonic/gin"
+	"test_task_makves/src/api"
+)
 
 func main() {
-	db.ReadLocalDB()
+
+	var router = gin.Default()
+
+	api.API(router)
+	//db.ReadLocalDB()
+
+	router.Run()
+
 }

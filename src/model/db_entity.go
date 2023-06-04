@@ -3,7 +3,7 @@ package model
 // todo: конверт string участников групп в список
 
 type DB_entity struct {
-	Id                        int64  `csv:"id" json:"id"`
+	Id                        int    `csv:"id" json:"id"`
 	Uid                       string `csv:"uid" json:"uid"`
 	Domain                    string `csv:"domain" json:"domain"`
 	Cn                        string `csv:"cn" json:"cn"`
@@ -48,8 +48,8 @@ type DB_entity struct {
 	NumMailboxes              int    `csv:"num_mailboxes" json:"num_mailboxes"`
 	NumMemberOfGroups         int    `csv:"num_member_of_groups" json:"num_member_of_groups"`
 	NumMemberOfIndirectGroups int    `csv:"num_member_of_indirect_groups" json:"num_member_of_indirect_groups"`
-	MemberOfIndirectGroupsIds string `csv:"member_of_indirect_groups_ids" ` //json:"member_of_indirect_groups_ids"`
-	MemberOfGroupsIds         string `csv:"member_of_groups_ids" `          //json:"member_of_groups_ids"`
+	MemberOfIndirectGroupsIds string `csv:"member_of_indirect_groups_ids" json:"member_of_indirect_groups_ids"`
+	MemberOfGroupsIds         string `csv:"member_of_groups_ids" json:"member_of_groups_ids"`
 	IsAdmin                   bool   `csv:"is_admin" json:"is_admin"`
 	IsService                 bool   `csv:"is_service" json:"is_service"`
 }
