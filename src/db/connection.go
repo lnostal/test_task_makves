@@ -12,7 +12,12 @@ func ReadLocalDB() ([]model.DB_entity, error) {
 
 	entityArray := []model.DB_entity{}
 
-	file, err := os.Open("/Users/nosta/Documents/projects/test_task_makves/src/db/table.csv")
+	path := ""
+	if len(os.Args) > 1 {
+		path = os.Args[1]
+	}
+
+	file, err := os.Open(path)
 	if err != nil {
 		return nil, err
 	}
